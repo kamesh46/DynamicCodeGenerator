@@ -1,0 +1,14 @@
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	version="2.0">
+	<bindings wsdlLocation="ManageServiceOrderSOA.wsdl">
+		<globalBindings>
+			<xjc:serializable uid="-6026937020915831338" />
+			<xjc:simple />
+			<javaType name="java.util.Calendar" xmlType="xsd:dateTime"
+				parseMethod="javax.xml.bind.DatatypeConverter.parseDate"
+				printMethod="javax.xml.bind.DatatypeConverter.printDate" />
+			<javaType name="java.lang.Integer" xmlType="xsd:integer"/>
+		</globalBindings>
+	</bindings>
+</bindings>

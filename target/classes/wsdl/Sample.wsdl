@@ -1,0 +1,36 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://xmlns.dynamicCodeGenerate.com/Sample.wsdl"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:prod="http://xmlns.dynamicCodeGenerate.com/Sample.xsd"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	targetNamespace="http://xmlns.dynamicCodeGenerate.com/Sample.wsdl">
+	<types>
+		<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<xsd:import namespace="http://xmlns.dynamicCodeGenerate.com/Sample.xsd"
+				schemaLocation="../xsd/Sample.xsd" />
+		</xsd:schema>
+	</types>
+	<message name="SubmitOrderReqMessage">
+		<part name="parameters" element="prod:OrderDetails" />
+	</message>
+	<portType name="SampleOrder">
+		<operation name="SampleOrder">
+			<input message="tns:SubmitOrderReqMessage" />
+		</operation>
+	</portType>
+	<binding name="SampleServiceOrderBinding" type="tns:SampleOrder">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="SampleOrder">
+			<soap12:operation style="document" soapAction="SampleOrder" />
+			<input>
+				<soap12:body use="literal" />
+			</input>
+		</operation>
+	</binding>
+	<service name="SampleService">
+		<port name="SampleServiceOrder_pt" binding="tns:SampleServiceOrderBinding">
+			<soap12:address location="" />
+		</port>
+	</service>
+</definitions>

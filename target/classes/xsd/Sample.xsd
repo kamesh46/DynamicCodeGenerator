@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://xmlns.dynamicCodeGenerate.com/Sample.xsd"
+	targetNamespace="http://xmlns.dynamicCodeGenerate.com/Sample.xsd"
+	elementFormDefault="qualified">
+	<xsd:element name="OrderDetails" type="OrderDetails" />
+	<xsd:complexType name="OrderDetails">
+		<xsd:sequence>
+			<xsd:element name="ID" type="xsd:string" minOccurs="1"
+				maxOccurs="1" />
+			<xsd:element name="startDate" type="xsd:dateTime"
+				minOccurs="0" maxOccurs="1" />
+			<xsd:element name="endDate" type="xsd:dateTime"
+				minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Total" type="xsd:integer"
+				minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>
